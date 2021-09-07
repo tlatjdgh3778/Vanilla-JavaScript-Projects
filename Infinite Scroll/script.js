@@ -1,4 +1,9 @@
 const loading = document.querySelector(".loading");
+const scrollToTop = document.querySelector(".scrollToTop");
+
+scrollToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0 });
+});
 
 const displayLoading = () => {
     loading.classList.add("display");
@@ -17,6 +22,12 @@ window.addEventListener("scroll", () => {
     const scrollTop = document.documentElement.scrollTop; // 현재 스크롤 위치(스크롤 바 위쪽 기준)
     // scrollTop + clientHeight = scrollHeight
     // 스크롤을 다 내렸다는 뜻.
+
+    if (scrollTop >= 100) {
+        scrollToTop.classList.add("btnDisplay");
+    } else {
+        scrollToTop.classList.remove("btnDisplay");
+    }
 
     if (scrollTop + clientHeight === scrollHeight) {
         displayLoading();
