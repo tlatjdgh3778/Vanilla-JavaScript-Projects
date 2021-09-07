@@ -1,11 +1,9 @@
 # Infinite Scroll
 
-## Vanilla Javascript로 Infinite Scroll 구현
-
-### 구동화면
+## 구동화면
+<p align="center"><img src="https://user-images.githubusercontent.com/71371075/132310040-8981e369-615d-415e-a5bb-19ce93a24015.gif" /></p>
 
 ## 구현
-
 -   `scrollTop`과 `clientHeight`을 더한 값이 `scrollHeight`와 같으면 스크롤이 최하단에 도착한 것이어서 `displayLoading`으로 로딩 스피너를 보여주면서 데이터를 불러온다.
 
 ```js
