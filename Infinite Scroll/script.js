@@ -18,17 +18,9 @@ window.addEventListener("scroll", () => {
     // scrollTop + clientHeight = scrollHeight
     // 스크롤을 다 내렸다는 뜻.
 
-    // debounce.. 제일 마지막만 호출하도록
-    // 적용하지 않으면 로딩중에 스크롤을 내리면 계속해서 데이터를 불러온다.
-    // 한 번에 하나의 데이터만 로딩하게 하고 싶어서 사용
-    if (timer) {
-        clearTimeout(timer);
+    if (scrollTop + clientHeight === scrollHeight) {
+        displayLoading();
     }
-    timer = setTimeout(() => {
-        if (scrollTop + clientHeight === scrollHeight) {
-            displayLoading();
-        }
-    }, 150);
 });
 
 const randomUser = () => {
